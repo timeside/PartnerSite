@@ -26,16 +26,20 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITE_ID = 1
 
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.admin',
+    'myapp',
+    'south',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,8 +61,10 @@ WSGI_APPLICATION = 'partners.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+	'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'partner_db',
+	'USER': 'root',
+	'PASSWORD': 'sitX89sank240',
     }
 }
 
